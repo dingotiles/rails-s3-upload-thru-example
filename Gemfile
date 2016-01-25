@@ -4,9 +4,8 @@ ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-# Use SCSS for stylesheets
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.15'# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -29,8 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma'
 gem 'rails_12factor'
-
-gem 'pg'
 
 gem 'aws-sdk'
 gem 'cf-app-utils'
