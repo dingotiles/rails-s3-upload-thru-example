@@ -1,2 +1,7 @@
-<h1>Uploads#index</h1>
-<p>Find me in app/views/uploads/index.html.erb</p>
+<h1>All uploads</h1>
+<%= link_to "New upload", new_upload_path %>
+<% @uploads.each do |upload| %>
+    <div>
+        <%= link_to upload.name, upload.url %>
+    </div>
+<% end %>
