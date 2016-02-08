@@ -1,0 +1,9 @@
+---
+applications:
+- name: rails-s3-upload-thru-example
+  memory: 256M
+  instances: 1
+  buildpack: ruby_buildpack
+  services:
+  - rails-s3-upload-thru-example-pg
+  - rails-s3-upload-thru-example-s3
