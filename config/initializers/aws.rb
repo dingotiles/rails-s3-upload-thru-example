@@ -10,9 +10,11 @@ if ENV['VCAP_SERVICES']
   aws_access_key_id = aws_s3_credentials["access_key_id"]
   aws_secret_access_key = aws_s3_credentials["secret_access_key"]
   bucket = aws_s3_credentials["bucket"]
-else
-  aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+end
+
+unless aws_access_key_id && aws_secret_access_key
+  aws_access_key_id ||= ENV['AWS_ACCESS_KEY_ID']
+  aws_secret_access_key ||= ENV['AWS_SECRET_ACCESS_KEY']
   bucket = ENV['BUCKET']
   $stderr.puts "ERROR: missing $AWS_ACCESS_KEY_ID" if aws_access_key_id.blank?
   $stderr.puts "ERROR: missing $AWS_SECRET_ACCESS_KEY" if aws_secret_access_key.blank?

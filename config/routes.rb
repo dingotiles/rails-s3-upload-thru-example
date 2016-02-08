@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'uploads#new'
+  root 'uploads#index'
 
   resources :uploads
 end
