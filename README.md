@@ -19,11 +19,11 @@ Launch browser http://localhost:3000
 
 ### Deploy to Cloud Foundry
 
-Create AWS S3 & postgresql service instances:
+Create AWS S3 & postgresql/mysql service instances:
 
 ```
-cf create-service
-cf create-service
+cf create-service <pg|mysql> <plan> rails-s3-upload-thru-example-sql
+cf create-service <aws-s3> <plan> rails-s3-upload-thru-example-s3
 ```
 
 The default `manifest.yml` will bind the application to these service instances:
@@ -36,7 +36,7 @@ applications:
   instances: 1
   buildpack: ruby_buildpack
   services:
-  - rails-s3-upload-thru-example-pg
+  - rails-s3-upload-thru-example-sql
   - rails-s3-upload-thru-example-s3
 ```
 

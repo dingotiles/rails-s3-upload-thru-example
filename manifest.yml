@@ -6,5 +6,5 @@ applications:
   buildpack: ruby_buildpack
   timeout: 180
   services:
-  - rails-s3-upload-thru-example-pg
+  - rails-s3-upload-thru-example-sql
   - rails-s3-upload-thru-example-s3
